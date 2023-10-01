@@ -4,6 +4,6 @@ const employeeController = require ('../controllers/employeeController.js');
 
 
 
-router.post('/employees', employeeController.createEmployee);
+router.post('/employees', employeeController.addEmployee);
 
 module.exports = router;

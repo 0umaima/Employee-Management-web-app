@@ -34,7 +34,7 @@ const departmentSchema = new Schema({
 
 
 const Employee = mongoose.model('employees', employeeSchema);
-const Departements = mongoose.model('availableDepartements', departmentSchema);
+const Departements = mongoose.model('Departements', departmentSchema);
 
 module.exports = {
     Employee,
