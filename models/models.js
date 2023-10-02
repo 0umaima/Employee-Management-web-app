@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+// const connectDb = require('../config/db.js')
 
 const {Schema} = mongoose;
-
+// connectDb()
 const employeeSchema = new Schema({
 
     name: {
@@ -33,10 +34,7 @@ const departmentSchema = new Schema({
 
 
 
-const Employee = mongoose.model('employees', employeeSchema);
-const Departements = mongoose.model('Departements', departmentSchema);
+const Employee = mongoose.model('Employee', employeeSchema, 'Employees');
+const Departements = mongoose.model('Department', departmentSchema, 'Departements');
 
-module.exports = {
-    Employee,
-    Departements
-}
+module.exports = { Employee, Departements }

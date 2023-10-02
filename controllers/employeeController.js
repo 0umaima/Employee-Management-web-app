@@ -1,44 +1,83 @@
-const connectDb = require ('../config/db.js')
-const {Employee} = require('../models/models.js');
-const { Departements } = require('../models/models.js');
+const connectDb = require('../config/db.js')
+const {
+    Employee
+} = require('../models/models.js');
+const {
+    Departements
+} = require('../models/models.js');
+
+
+// async function addEmployee(req, res) {
+//     // connectDb();
+//     // try {
+//     //     const {
+//     //         name,
+//     //         surname,
+//     //         departement
+//     //     } = req.body;
+
+//     //     console.log({
+//     //         name,
+//     //         surname,
+//     //         departement
+//     //     })
+
+//     //     //find departement by name 
+//     //     const foundDepartment = await Departements.findOne({
+//     //         name: departement
+//     //     });
+//     //     console.log(foundDepartment);
+
+//     //     await Employee.populate('departement').execPopulate();
+
+
+
+//     //     if (!foundDepartment) {
+//     //         return res.status(400).json({
+//     //             error: 'Invalid department'
+//     //         });
+//     //     }
+
+//     //     const newEmployee = {
+//     //         name,
+//     //         surname,
+//     //         departement: foundDepartment.name,
+//     //     };
+
+//     //     const employee = await Employee.create(newEmployee);
+//     //     res.status(201).json(employee);
+//     // } catch (err) {
+//     //     console.log(err);
+//     //     res.status(500).json({
+//     //         error: 'Failed to create employee'
+//     //     });
+//     // }
+// }
+
+
+connectDb();
 
 
 async function addEmployee(req, res) {
-    connectDb();
-  try {
-    const { name, surname, departement } = req.body;
-    console.log({ name, surname, departement })
+    try {
+        const {
+            name,
+            surname,
+            departement
+        } = req.body;
 
-    //find departement by name 
-    const foundDepartment = await Departements.findOne({ name: departement });
-    
-    console.log(foundDepartment)
+        const foundDepartment = await Departements.find();
+        const emp = await Employee.find();
 
-    await employee.populate('departement').execPopulate();
-    console.log(employee.departement);
+        console.log(foundDepartment, emp);
 
-    
+    } catch (err) {
 
-    if (!foundDepartment) {
-      return res.status(400).json({ error: 'Invalid department' });
     }
-
-    const newEmployee = new Employee({
-      name,
-      surname,
-      departement: foundDepartment.name, 
-    });
-
-    const employee = await Employee.create(newEmployee);
-    
-    res.status(201).json(employee);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: 'Failed to create employee' });
-  }
 }
-
-module.exports = { addEmployee };
+module.exports = {
+    addEmployee
+};
 
 
 
