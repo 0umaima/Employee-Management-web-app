@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-// const connectDb = require('../config/db.js')
 
 const {Schema} = mongoose;
-// connectDb()
 const employeeSchema = new Schema({
 
     name: {

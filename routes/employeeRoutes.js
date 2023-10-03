@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const employeeController = require ('../controllers/employeeController.js');
+const addEmployees = require ('../controllers/addEmployees.js');
 
 
 
-router.post('/employees', employeeController.addEmployee);
+router.post('/employees', addEmployees.addEmployee);
 
 module.exports = router;
