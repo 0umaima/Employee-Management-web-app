@@ -1,6 +1,5 @@
 const connectDb = require('../config/db.js')
 const { Employee } = require('../models/models.js');
-const { Departements } = require('../models/models.js');
 
 
 
@@ -15,12 +14,12 @@ async function addEmployee(req, res) {
         const { name, surname, departement } = req.body;
         
 
-        const newEmployee = new Employee ({ name, surname, departement});
+        const newEmployee =  new Employee ({ name, surname, departement});
 
         console.log(newEmployee);
 
         // Save the new employee to the database
-        newEmployee.save()
+        await newEmployee.save()
 
         
 
