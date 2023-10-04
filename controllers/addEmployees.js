@@ -29,6 +29,8 @@ async function addEmployee(req, res) {
          console.error('Error adding employee:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
+
+    
 }
 module.exports = {
     addEmployee

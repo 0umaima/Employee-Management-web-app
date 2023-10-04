@@ -3,6 +3,7 @@ const { Employee } = require ('../models/models.js');
 
 connectDb();
 
+
 async function updateEmployee (req, res) {
     try{
 
@@ -26,7 +27,7 @@ async function updateEmployee (req, res) {
 
     } catch (error){
 
-        console.log("Error Updating Employee", error);
+        console.error("Error Updating Employee", error);
         res.status(500).json({message: 'Server Issues'});
 
     }

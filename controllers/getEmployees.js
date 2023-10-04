@@ -11,10 +11,13 @@ async function getAllEmployees (req, res){
             res.status(404).json('Employees Can not be displayed')
         }
         res.status(200).json({display});
-    } catch (error){
-        console.log('Error Displaying Employees', error);
+    } 
+    
+    catch (error){
+        console.error('Error Displaying Employees', error);
         res.status(500).json('Server Issue')
-    }
+    } 
+  
 };
 
 module.exports = {getAllEmployees}

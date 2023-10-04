@@ -12,7 +12,7 @@ const employeeSchema = new Schema({
         required: true,
     },
     departement: {
-        type: String,
+        type: Object,
         required: true,
     }
 }, {

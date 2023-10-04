@@ -19,7 +19,7 @@ const { Employee } = require('../models/models.js')
 
 
         } catch(err){
-            console.log("Error Deleting Employee", err);
+            console.error("Error Deleting Employee", err);
             res.status(500).json({message: "Server Issue"})
         }
 };
