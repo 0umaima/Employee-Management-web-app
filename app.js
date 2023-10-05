@@ -13,7 +13,7 @@ app.use(employeeRoutes);
 
 
 //Start the server 
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server Started on port ${PORT}`);
 })
