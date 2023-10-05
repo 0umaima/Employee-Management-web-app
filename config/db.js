@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URI = 'mongodb://127.0.0.1:27017/Employee-Management?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.6';
+const URI = 'mongodb+srv://Reader:reader123@cluster1.f6qvi2y.mongodb.net/Employee-Managment?retryWrites=true&w=majority';
 
 const connectDb = async () =>{
     mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })

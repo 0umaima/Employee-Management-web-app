@@ -32,7 +32,7 @@ const departmentSchema = new Schema({
 
 
 
-const Employee = mongoose.model('Employee', employeeSchema, 'Employees');
-const Departements = mongoose.model('Department', departmentSchema, 'Departements');
+const Employee = mongoose.model('Employe', employeeSchema, 'Employee');
+const Departement = mongoose.model('Department', departmentSchema, 'Departements');
 
-module.exports = { Employee, Departements }
+module.exports = { Employee, Departement }

@@ -13,6 +13,7 @@ async function addEmployee(req, res) {
         //extract data from request body.
         const { name, surname, departement } = req.body;
         
+        console.log(req.body);
 
         const newEmployee =  new Employee ({ name, surname, departement});
 
