@@ -39,8 +39,30 @@ const departmentSchema = new Schema({
         timestamps: true,
     });
 
+    const taskSchema = new Schema({
+        //i added more elements here Description and its not required 
+        // also the local Id that we're going to use to point towards our department
+        title: {
+            type: String,
+            required: true,
+        },
+        description:{
+            type: String,
+            required: true,
+        },
+        assignedEmployee:{
+            type :mongoose.Schema.Types.ObjectId ,
+            ref:'employee',
+        }
+    },
+    {
+        timestamps: true,
+    });
+
 
 const Employee = mongoose.model('Employee', employeeSchema, 'Employees');
 const Departement = mongoose.model('Department', departmentSchema, 'Departements');
+const Task = mongoose.model('task', taskSchema, 'tasks')
 
-module.exports = { Employee, Departement }
+
+module.exports = { Employee, Departement, Task }

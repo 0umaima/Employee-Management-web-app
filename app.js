@@ -15,6 +15,8 @@ app.use('/employees', employeeRoutes);
 const DepartmentRoutes = require('./routes/DepartmentsRoutes');
 app.use('/departments', DepartmentRoutes)
 
+const TaskRoutes = require('./routes/TasksRoutes');
+app.use('/Tasks', TaskRoutes)
 
 // const {connectDb} = require('./config/db.js')
 //Start the server 

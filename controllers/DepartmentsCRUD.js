@@ -35,10 +35,11 @@ async function deleteDepartement (req, res){
     try{
         //Extract Departement id from request params
         const { id } = req.params;
+        
 
         //find Departement by id and delete it
         const deletedDepartement = await Departement.findByIdAndDelete(id);
-
+        console.log(deletedDepartement)
         if(!deletedDepartement){
             return res.status(404).json({ message: "Departement not Deleted"});
         }

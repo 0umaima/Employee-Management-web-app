@@ -1,10 +1,5 @@
-// const connectDb = require('../config/db.js')
 const { Employee } = require('../models/models.js');
 
-
-
-
-// connectDb();
 
 
 async function addEmployee(req, res) {
@@ -21,7 +16,7 @@ async function addEmployee(req, res) {
         res.status(201).json({ message: 'Employee added successfully!' });
 
     } catch (err) {
-         console.error('Error adding employee:', error);
+         console.error('Error adding employee:', err);
         res.status(500).json({ message: 'Internal server error' });
     }
 };
@@ -53,7 +48,7 @@ async function getAllEmployees (req, res){
         const employeelist = await Employee.find();
 
         if(!employeelist){
-            res.status(404).json('Employees Can not be employeelisted')
+            res.status(404).json('Employees Can not be listed')
         }
         res.status(200).json({employeelist});
     } 
