@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
+const env = require('dotenv').config()
 
-const URI = 'mongodb+srv://Reader:reader123@cluster1.f6qvi2y.mongodb.net/Employee-Managment?retryWrites=true&w=majority';
+//installed dotenv 
+
+const URI = process.env.URI
+const localuri = 'mongodb://127.0.0.1:27017/Employee-Management?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.1'
 
 const connectDb = async () =>{
     mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -11,4 +15,4 @@ const connectDb = async () =>{
     });
 };
 
-module.exports = connectDb;
+module.exports = connectDb; 

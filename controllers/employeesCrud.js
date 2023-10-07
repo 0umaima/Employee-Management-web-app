@@ -1,10 +1,10 @@
-const connectDb = require('../config/db.js')
+// const connectDb = require('../config/db.js')
 const { Employee } = require('../models/models.js');
 
 
 
 
-connectDb();
+// connectDb();
 
 
 async function addEmployee(req, res) {
@@ -12,17 +12,11 @@ async function addEmployee(req, res) {
 
         //extract data from request body.
         const { name, surname, departement } = req.body;
-        
-        console.log(req.body);
 
-        const newEmployee =  new Employee ({ name, surname, departement});
-
+        const newEmployee =  new Employee ({ name, surname, departement });
         console.log(newEmployee);
-
         // Save the new employee to the database
         await newEmployee.save()
-
-        
 
         res.status(201).json({ message: 'Employee added successfully!' });
 
@@ -56,16 +50,16 @@ async function deleteEmployee (req, res){
 
 async function getAllEmployees (req, res){
     try{
-        const display = await Employee.find();
+        const employeelist = await Employee.find();
 
-        if(!display){
-            res.status(404).json('Employees Can not be displayed')
+        if(!employeelist){
+            res.status(404).json('Employees Can not be employeelisted')
         }
-        res.status(200).json({display});
+        res.status(200).json({employeelist});
     } 
     
     catch (error){
-        console.error('Error Displaying Employees', error);
+        console.error('Error employeelisting Employees', error);
         res.status(500).json('Server Issue')
     } 
   
